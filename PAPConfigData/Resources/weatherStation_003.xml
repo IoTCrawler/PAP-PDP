@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource id="https://193.144.201.50:3501/SocIoTal_CM_REST_V2/EXTENDED/queryContext/SocIoTal:SAN:WeatherStation:Dev_001">
+  <actions>
+    <action id="GET" />
+  </actions>
+</resource>
+
