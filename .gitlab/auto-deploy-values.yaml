@@ -6,12 +6,12 @@ service:
   internalPort: 8080
 
 livenessProbe:
-  path: "/"
+  path: "/XACML-WebPAP2_blockchain/pap/index.zul"
   initialDelaySeconds: 14
   timeoutSeconds: 14
   scheme: "HTTP"
 readinessProbe:
-  path: "/"
+  path: "/XACML-WebPAP2_blockchain/pap/index.zul"
   initialDelaySeconds: 4
   timeoutSeconds: 2
   scheme: "HTTP"
