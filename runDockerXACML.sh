@@ -1,3 +1,9 @@
+#
+#Copyright Odin Solutions S.L. All Rights Reserved.
+#
+#SPDX-License-Identifier: Apache-2.0
+#
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo $DIR
 
@@ -10,7 +16,7 @@ docker run --privileged --name=xacml_dockerized \
 
 
 # Accessing the PAP Service 
-# localhost:8080/XACML-WebPAP2
+# localhost:8080/XACML-WebPAP2_blockchain
 
 # Accesing the PDP Service
-# http://localhost:8080/XACMLServlet
+# http://localhost:8080/XACMLServletPDP/

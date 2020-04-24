@@ -1,3 +1,9 @@
+#
+#Copyright Odin Solutions S.L. All Rights Reserved.
+#
+#SPDX-License-Identifier: Apache-2.0
+#
+
 FROM tomcat
 WORKDIR /usr/local/tomcat
 ADD ./deployment/XACML-WebPAP2_blockchain.war /usr/local/tomcat/webapps/
