@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<attributes storingDate="2019-10-08T13:54:50.578">
+<attributes storingDate="2020-03-31T15:12:54.373">
   <attributes>
     <attribute name="pedrog@um.es" xacml_id="urn:oasis:names:tc:xacml:2.0:subject:role" sortedValue="subject" xacml_DataType="#string" />
+    <attribute name="jamartinez@odins.es" xacml_id="urn:oasis:names:tc:xacml:2.0:subject:role" sortedValue="subject" xacml_DataType="#string" />
+    <attribute name="UMU" xacml_id="urn:ietf:params:scim:schemas:core:2.0:organization" sortedValue="subject" xacml_DataType="#string" />
+    <attribute name="OdinS" xacml_id="urn:ietf:params:scim:schemas:core:2.0:organization" sortedValue="subject" xacml_DataType="#string" />
+    <attribute name="Pedro" xacml_id="urn:oasis:names:tc:xacml:2.0:subject:role" sortedValue="subject" xacml_DataType="#string" />
+    <attribute name="Juan" xacml_id="urn:oasis:names:tc:xacml:2.0:subject:role" sortedValue="subject" xacml_DataType="#string" />
     <attribute name="GET" xacml_id="urn:oasis:names:tc:xacml:1.0:action:action-id" sortedValue="action" xacml_DataType="#string" />
     <attribute name="POST" xacml_id="urn:oasis:names:tc:xacml:1.0:action:action-id" sortedValue="action" xacml_DataType="#string" />
     <attribute name="PUT" xacml_id="urn:oasis:names:tc:xacml:1.0:action:action-id" sortedValue="action" xacml_DataType="#string" />
@@ -9,6 +14,12 @@
     <attribute name="ngsi-ld/v1/entities/?type=http://example.org/vehicle/Vehicle" xacml_id="urn:oasis:names:tc:xacml:1.0:resource:resource-id" sortedValue="resource" xacml_DataType="#string" />
     <attribute name="/ngsi-ld/v1/subscriptions" xacml_id="urn:oasis:names:tc:xacml:1.0:resource:resource-id" sortedValue="resource" xacml_DataType="#string" />
     <attribute name="/ngsi-ld/v1/entities" xacml_id="urn:oasis:names:tc:xacml:1.0:resource:resource-id" sortedValue="resource" xacml_DataType="#string" />
+    <attribute name="https://155.54.99.253:1028/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:ora.*" xacml_id="urn:oasis:names:tc:xacml:1.0:resource:resource-id" sortedValue="resource" xacml_DataType="#string" />
+    <attribute name="https://155.54.99.253:1028/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*" xacml_id="urn:oasis:names:tc:xacml:1.0:resource:resource-id" sortedValue="resource" xacml_DataType="#string" />
+    <attribute name="https://155.54.95.170:1027/ngsi-ld/v1/entities/?type=http://example.org/vehicle/Vehicle" xacml_id="urn:oasis:names:tc:xacml:1.0:resource:resource-id" sortedValue="resource" xacml_DataType="#string" />
+    <attribute name="https://155.54.95.170:1027/ngsi-ld/v1/entities/urn:ngsi-ld:Observation:parking" xacml_id="urn:oasis:names:tc:xacml:1.0:resource:resource-id" sortedValue="resource" xacml_DataType="#string" />
+    <attribute name="https://155.54.99.253:1041/v2/entities?type=parkingmeter" xacml_id="urn:oasis:names:tc:xacml:1.0:resource:resource-id" sortedValue="resource" xacml_DataType="#string" />
+    <attribute name="https://155.54.99.253:1041/v2/entities?type=parkingsite" xacml_id="urn:oasis:names:tc:xacml:1.0:resource:resource-id" sortedValue="resource" xacml_DataType="#string" />
   </attributes>
 </attributes>
 
