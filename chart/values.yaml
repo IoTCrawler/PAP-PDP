@@ -12,7 +12,7 @@ pappdp:
     tag: latest
     pullPolicy: IfNotPresent
     secrets:
-    - name: gitlab-registry
+    - name: gitlab-registry-xacml-xacml-pap-pdp
   service:
     enabled: true
     annotations: {}
@@ -42,7 +42,7 @@ gitlab:
   envName:
   envURL:
 ingress:
-  enabled: 
+  enabled: true
   url: 
   tls:
     enabled: true
