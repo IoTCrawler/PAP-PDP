@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: {{ template "appname" . }}
+    track: "{{ .Values.application.track }}"
+    tier: "{{ .Values.application.tier }}"
+    release: {{ .Release.Name }}
+    service: {{ .Values.pappdp.service.name }}
+  name: {{ .Values.pappdp.service.name }}
+spec:
+  type: {{ .Values.pappdp.service.type }}
+  ports:
+  - port: {{ .Values.pappdp.service.externalPort }}
+    targetPort: {{ .Values.pappdp.service.internalPort }}
+    protocol: TCP
+    name: {{ .Values.pappdp.service.name }}
+  selector:
+    app: {{ template "appname" . }}
+    track: "{{ .Values.application.track }}"
+    tier: "{{ .Values.application.tier }}"
+    release: {{ .Release.Name }}
+    service: {{ .Values.pappdp.service.name }}
+status:
+  loadBalancer: {}
