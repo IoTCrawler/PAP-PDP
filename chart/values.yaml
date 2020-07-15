@@ -10,7 +10,7 @@ pappdp:
   image:
     repository: gitlab.iotcrawler.net:4567/xacml/xacml_pap_pdp/master
     tag: latest
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
     secrets:
     - name: gitlab-registry-xacml-xacml-pap-pdp
   service:
