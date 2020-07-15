@@ -22,6 +22,18 @@
           </Resource>
           <Resource>
             <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">https://production-auto-deploy.pep-proxy-26-production:1027/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:ora.*</AttributeValue>
+              <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
+            </ResourceMatch>
+          </Resource>
+          <Resource>
+            <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">https://production-auto-deploy.pep-proxy-26-production:1027/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*</AttributeValue>
+              <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
+            </ResourceMatch>
+          </Resource>
+          <Resource>
+            <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
               <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">https://pep-proxy-pep-proxy.35.241.228.250.nip.io/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*</AttributeValue>
               <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
             </ResourceMatch>
@@ -29,12 +41,6 @@
           <Resource>
             <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
               <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">ngsi-ld/v1/entities/?type=http://example.org/vehicle/Vehicle</AttributeValue>
-              <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
-            </ResourceMatch>
-          </Resource>
-          <Resource>
-            <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
-              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">https://155.54.99.253:1028/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*</AttributeValue>
               <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
             </ResourceMatch>
           </Resource>
@@ -68,6 +74,24 @@
               <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
             </ResourceMatch>
           </Resource>
+          <Resource>
+            <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">http://production-auto-deploy.pep-proxy-26-production:1027/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*</AttributeValue>
+              <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
+            </ResourceMatch>
+          </Resource>
+          <Resource>
+            <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">http://production-auto-deploy.pep-proxy-26-production:1027/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:ora.*</AttributeValue>
+              <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
+            </ResourceMatch>
+          </Resource>
+          <Resource>
+            <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">https://155.54.99.253:1028/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*</AttributeValue>
+              <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
+            </ResourceMatch>
+          </Resource>
         </Resources>
         <Actions>
           <Action>
@@ -92,13 +116,13 @@
         <Resources>
           <Resource>
             <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
-              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">https://pep-proxy-pep-proxy.35.241.228.250.nip.io/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*</AttributeValue>
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">https://production-auto-deploy.pep-proxy-26-production:1027/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*</AttributeValue>
               <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
             </ResourceMatch>
           </Resource>
           <Resource>
             <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
-              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">https://155.54.99.253:1028/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*</AttributeValue>
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">https://pep-proxy-pep-proxy.35.241.228.250.nip.io/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*</AttributeValue>
               <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
             </ResourceMatch>
           </Resource>
@@ -111,6 +135,18 @@
           <Resource>
             <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
               <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">https://155.54.95.170:1027/ngsi-ld/v1/entities/urn:ngsi-ld:Observation:parking</AttributeValue>
+              <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
+            </ResourceMatch>
+          </Resource>
+          <Resource>
+            <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">http://production-auto-deploy.pep-proxy-26-production:1027/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*</AttributeValue>
+              <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
+            </ResourceMatch>
+          </Resource>
+          <Resource>
+            <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">https://155.54.99.253:1028/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*</AttributeValue>
               <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
             </ResourceMatch>
           </Resource>
@@ -138,7 +174,19 @@
         <Resources>
           <Resource>
             <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">https://production-auto-deploy.pep-proxy-26-production:1027/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:ora.*</AttributeValue>
+              <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
+            </ResourceMatch>
+          </Resource>
+          <Resource>
+            <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
               <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">https://pep-proxy-pep-proxy.35.241.228.250.nip.io/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:ora.*</AttributeValue>
+              <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
+            </ResourceMatch>
+          </Resource>
+          <Resource>
+            <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">http://production-auto-deploy.pep-proxy-26-production:1027/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:ora.*</AttributeValue>
               <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string" />
             </ResourceMatch>
           </Resource>
