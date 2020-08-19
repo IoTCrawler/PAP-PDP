@@ -1,104 +1,113 @@
-# License
-
-PAP-PDP Project source code files are made avaialable under the Apache License, Version 2.0 (Apache-2.0), located into the LICENSE file.
 
 # Introduction
 
-This project corresponds to the implementation of the XACML framework. It comprises a Policy Administration Point (PAP) which is responsible for managing the authorisation policies, and a Policy Decision Point (PDP).
+This project consists of 3 developments:
 
 
-# Configuration config.cfg file
+1) XACML_PAP. Offers a web environment to manage subjects, actions and resources and policies.
 
-Before launching the project, it's necessary to review the blockchain.conf file:
+2) XAML_ServletPDP. Offers an endpoint to verify if a subject can perform an action over a specific resource through the policies.
 
-```sh
-cd projectPath / xacml_pap_pdp / PAPConfigData
-vi blockchain.conf
-```
+3) XACML_PDP_SunXACML. Contains dependencies needed by XAML_ServletPDP.
 
-This file must have defined the blockchain endpoint, the domain and resources. 
+Each development corresponds with a subfolder.
 
-# Configuration docker-compose.yml file
 
-There isn't any additional required configuration in this file.
+# Deploying XACML_PAP_PDP (docker-compose)
 
-# Prerequisites
+## Configure docker-compose environment variables
 
-To run this project is neccessary to install the docker-compose tool.
+Access to `XACML_PAP_PDP` directory and edit docker-compose to verify environment variables.
 
-https://docs.docker.com/compose/install/
+- If you don't need blockchain integration you can remove the "environment" section or define `BlockChain_integration=0`.
 
-Launch then next components:
+- If you need blockchain integration (`BlockChain_integration=1`), you have two ways to configure the integration:
 
-- Blockchain component running.
+	- Using a configuration file (./PAP/ConfigData/blockchain.conf) : `BlockChain_configuration=0`
 
-# Installation / Execution.
+	- Using the environment variables of docker-compose.yml file : `BlockChain_configuration=1`. 				
+	
+		- BlockChain_protocol=http # Optional: Default value : http
+        - BlockChain_domain=testdomain # Required 
+        - BlockChain_IP=#<specify Blockchain endpoint IP address> # Required
+        - BlockChain_port=8000 # Optional Default value : 8000
+        - BlockChain_get_resource=/policy/testdomain # Optional : Default value : /policy/<BlockChain_domain>
+        - BlockChain_post_resource=/policy/register # Optional : Default value : /policy/register
+        - BlockChain_update_resource=/policy/update # Optional : Default value : /policy/update
 
-After the review of blockchain.conf file and docker-compose finle, we are going to obtain then Docker image. To do this, you have to build a local one, thus:
+## Build the proyect image and run
 
-```sh
-cd projectPath / xacml_pap_pdp
+To build the proyect image and once docker-compose file is reviewed, access to `XACML_PAP_PDP` directory and run:
+
+```bash  
 ./build.sh
 ```
 
-The build.sh file contains docker build -t iotcrawler/pap-pdp ./ command.
+When the image was created run it using:
 
-Finally, to launch the connector image, we use the next command:
-
-```sh
-cd projectPath / xacml_pap_pdp
+```bash  
 docker-compose up -d
 ```
 
-# Monitoring.
 
-- To test if the container is running:
+# Testing XACML_PAP_PDP
 
-```sh
-docker ps -as
+## Testing PAP
+
+Access through a web explorer to `http://<XACML-PublicIP>:8080/XACML-WebPAP-2`. You will see the main webpage of the PAP service. Push `Manage Policies` button and once the page is loaded push `Apply` button, no error has ocurrs.
+
+## Testing PDP
+
+- To test PDP is running you can run:
+
+```bash
+curl --location --request GET 'http://<XACML-PublicIP>:8080/XACMLServletPDP'
 ```
 
-The system must return that the status of the XACML-PAP-PDP container is up.
+you must obtain a response like this (status=200):
 
-- To show container logs.
-
-```sh
-docker-compose logs authcomponents
+```bash
+You have to send a POST message with the XACML Request
 ```
 
-# XACML functionality.
+- To test a PDP request (policies) you can run:
 
-- Policy Administration Point (PAP) is accessible through WEB explorer at http://localhost:8080/XACML-WebPAP2_blockchain.
-
-- Policy Decision Point (PDP) is waiting for POST request at http://localhost:8080/XACMLServletPDP/. An example of a request could be:
-
-```sh
-curl --location --request POST 'http://localhost:8080/XACMLServletPDP/' \
+```bash
+curl --location --request POST 'http://<XACML-PublicIP>:8080/XACMLServletPDP/' \
 --header 'Content-Type: text/plain' \
 --data-raw '<Request xmlns="urn:oasis:names:tc:xacml:2.0:context:schema:os">
    <Subject SubjectCategory="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject">
        <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:subject:role" DataType="http://www.w3.org/2001/XMLSchema#string">
-           <AttributeValue>{{subject}}</AttributeValue>
+           <AttributeValue>Pedro</AttributeValue>
        </Attribute>  
    </Subject>
    
    <Resource>
        <Attribute AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string">
-           <AttributeValue>{{resource}}</AttributeValue>
+           <AttributeValue>https://155.54.99.253:1028/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*</AttributeValue>
        </Attribute>
    </Resource> 
 
    <Action>
        <Attribute AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string">
-           <AttributeValue>{{action}}</AttributeValue>
+           <AttributeValue>GET</AttributeValue>
        </Attribute>  
    </Action>
 
    <Environment/>
 </Request>'
+
 ```
 
-Where:
-- subject: subject of the resource’s request. In DCapBAC scenario, it could correspond with a username (IDM). For example: “user1”
-- resource:  endpoint + path of the resource’s request (protocol+IP+PORT+path). For example: “https://153.55.55.120:2354/ngsi-ld/v1/entities/urn:ngsi-ld:Sensor:humidity.201”.  In DCapBAC scenario, endpoint corresponds with the PEP-Proxy one.
-- action: method of the resource’s request (“POST”, “GET”,  “PATCH”...)
+you must obtain a response like this (status=200):
+
+```bash
+<Response>
+  <Result ResourceID="https://155.54.99.253:1028/ngsi-ld/v1/entities?type=http://www.w3.org/ns/sosa/Sensor;idPattern=urn:ngsi-ld:Sensor:parking.*">
+    <Decision>Permit</Decision>
+    <Status>
+      <StatusCode Value="urn:oasis:names:tc:xacml:1.0:status:ok"/>
+    </Status>
+  </Result>
+</Response>
+```

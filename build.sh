@@ -6,4 +6,4 @@
 
 #!/bin/bash
 
-docker build -t iotcrawler/pap-pdp ./
+docker build -t odins/pap-pdp ./
